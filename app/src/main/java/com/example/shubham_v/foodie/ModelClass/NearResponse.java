@@ -40,14 +40,30 @@ public class NearResponse {
 
             @SerializedName("name")
             private String name;
+            @SerializedName("id")
+            private  int hotelId;
             @SerializedName("cuisines")
             private String cuisines;
             @SerializedName("average_cost_for_two")
             private int average_cost_for_two;
             @SerializedName("thumb")
             private String thumb;
+            @SerializedName("menu_url")
+            private String MenuUrl;
+
             @SerializedName("location")
             private Locations locations;
+
+
+
+
+            public String getMenuUrl() {
+                return MenuUrl;
+            }
+
+            public void setMenuUrl(String menuUrl) {
+                MenuUrl = menuUrl;
+            }
 
             public String getName() {
                 return name;
@@ -55,6 +71,14 @@ public class NearResponse {
 
             public void setName(String name) {
                 this.name = name;
+            }
+
+            public int getHotelId() {
+                return hotelId;
+            }
+
+            public void setHotelId(int hotelId) {
+                this.hotelId = hotelId;
             }
 
             public String getCuisines() {

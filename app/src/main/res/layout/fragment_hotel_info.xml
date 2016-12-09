@@ -1,13 +1,250 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shubham_v.foodie.HotelInfoFragment.HotelInfo">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.shubham_v.foodie.frahment.HotelInfo">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="233dp"
+        app:srcCompat="@drawable/demohotle"
+        android:id="@+id/hotel_image_view_id"
+        android:background="#FFFFF0"
+        />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/hotel_name_Id"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:background="#FFD1DC"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="507dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:weightSum="1">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:weightSum="1"
+        android:id="@+id/hotel_menu_card_id"
+        android:background="#FDFD96"
+        >
+
+        <ImageView
+            android:layout_width="473dp"
+            android:layout_height="200dp"
+            android:background="@drawable/rice"
+            android:id="@+id/hotel_menu_card" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:weightSum="3"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp">
+            <TextView
+                android:text="cuisines"
+                android:layout_width="match_parent"
+                android:layout_height="66.6dp"
+                android:id="@+id/hotel_cuisines_id"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="1dp" />
+
+            <TextView
+                android:text="cost_of_two"
+                android:layout_width="match_parent"
+                android:layout_height="66.6dp"
+                android:id="@+id/cost_of_two_id"
+                android:textSize="20sp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="hotelId"
+                android:layout_width="match_parent"
+                android:layout_height="66.6dp"
+                android:id="@+id/hotel_id"
+                android:textSize="20sp"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:weightSum="1">
+
+
+        <LinearLayout
+            android:layout_width="471dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="4dp"
+            android:weightSum="1"
+            android:background="#FBCEB1"
+            >
+
+            <TextView
+                android:text="Enter Review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:textStyle="normal|bold"
+                android:textSize="18sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/userReview_insert_id"
+                android:layout_weight="0.41"
+                android:hint="Enter Review"
+                />
+
+            <TextView
+                android:text="Please rate between 1 to 5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textSize="18sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/user_insert_rat_id"
+        android:hint="Enter points"
+        android:layout_weight="1.04"
+        />
+
+    <Button
+        android:text="submit"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit_button_id"
+        android:textColor="#F8F8FF"
+        android:background="#000000"
+        />
+
+</LinearLayout>
+
+            <ScrollView
+                 android:layout_width="match_parent"
+                 android:layout_height="150dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="241dp"
+                        android:layout_height="144dp"
+                        android:text="5"
+                        android:hint="yourRating"
+                        android:id="@+id/user_show_review_id"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="5"
+                        android:id="@+id/user_reating_show_id"
+                        android:hint="yourRating"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:layout_marginTop="40dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="4dp"
+            android:weightSum="1"
+            android:background="#C0C0C0"
+
+            >
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="Address"
+                        android:textSize="37dp"
+                        android:textAlignment="center"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="204dp"
+                        android:text=" - TrigNet consists of a network of continuously operating Global Navigation Satellite System ... Internet Protocol (IP) address: 196.15.132.2"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:id="@+id/hotel_address_id"
+                        android:textStyle="normal|bold"
+                        android:textAllCaps="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="4dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Click for navigation"
+                            android:textSize="18dp"
+                            android:textAlignment="center"/>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="69dp"
+                            android:id="@+id/navigation_button_id"
+                            android:background="@drawable/apple_google_maps" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

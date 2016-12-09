@@ -26,12 +26,15 @@ dependencies {
     })
     compile files('libs/converter-gson-2.0.0-beta2.jar')
 
+
+
     compile 'com.google.android.gms:play-services:10.0.1'
     compile 'com.google.android.gms:play-services-maps:10.0.1'
     compile 'com.android.support:support-v4:25.0.1'
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
+    compile 'com.squareup.picasso:picasso:2.+'
+    compile 'com.squareup.okhttp:okhttp:1.+'
+
     testCompile 'junit:junit:4.12'
-
-
 }
