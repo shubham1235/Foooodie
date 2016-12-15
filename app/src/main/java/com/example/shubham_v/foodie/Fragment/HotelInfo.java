@@ -1,13 +1,14 @@
-package com.example.shubham_v.foodie.frahment;
+package com.example.shubham_v.foodie.Fragment;
 
 
-import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,6 @@ import android.widget.Toast;
 
 import com.example.shubham_v.foodie.Database.Fooddatabase;
 import com.example.shubham_v.foodie.R;
-import com.google.android.gms.vision.text.Text;
 import com.squareup.picasso.Picasso;
 
 import java.util.Locale;
@@ -31,7 +31,7 @@ public class HotelInfo extends Fragment {
 
 
 
-      Fooddatabase fooddatabase;
+    Fooddatabase fooddatabase;
     public String review;
     public String rating;
 
@@ -40,7 +40,7 @@ public class HotelInfo extends Fragment {
                              Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_hotel_info, container, false);
-        Button navigationButton = (Button)view.findViewById(R.id.navigation_button_id);
+        final Button navigationButton = (Button)view.findViewById(R.id.navigation_button_id);
         ImageView hotelImage = (ImageView)view.findViewById(R.id.hotel_image_view_id);
         ImageView hotelMenu_card =(ImageView)view.findViewById(R.id.hotel_menu_card);
         TextView hotelCuision = (TextView)view.findViewById(R.id.hotel_cuisines_id);
@@ -55,6 +55,7 @@ public class HotelInfo extends Fragment {
         TextView RatingshowTextview =  (TextView)view.findViewById(R.id.user_reating_show_id);
 
 
+        EnterRating.setRawInputType(Configuration.KEYBOARD_12KEY);
 
 
 
@@ -99,7 +100,8 @@ public class HotelInfo extends Fragment {
 
         //review
         ReviewshowTextview.setText(review);
-        RatingshowTextview.setText(rating);
+        RatingshowTextview.setText("your last rating : " +rating);
+        RatingshowTextview.setTextColor(Color.RED);
 
 
         Reviewsubmit.setOnClickListener(new View.OnClickListener() {
@@ -108,13 +110,32 @@ public class HotelInfo extends Fragment {
 
                 Bundle bundle = getArguments();
                 String hotelIdForSearchdataa = bundle.getString("hotelId");
-                fooddatabase.UpdateReview(hotelIdForSearchdataa,String.valueOf(EnterReview.getText()),String.valueOf(EnterRating.getText()));
+
+                String ratingnumbercheck = null;
+                ratingnumbercheck  = (EnterRating.getText().toString());
+                String reviewcheck = null;
+                       reviewcheck = String.valueOf(EnterRating.getText());
 
 
+                 if (!ratingnumbercheck.equals("") && !reviewcheck.equals("")) {
 
+                     int rating = 0;
+                          rating =  Integer.parseInt(ratingnumbercheck);
+
+                     if ( rating    >= 0 && rating <= 5) {
+                         fooddatabase.UpdateReview(hotelIdForSearchdataa, String.valueOf(EnterReview.getText()), String.valueOf(EnterRating.getText()));
+                     } else {
+                         Toast.makeText(getActivity(), "Please enter the number 0 to 5", Toast.LENGTH_SHORT).show();
+                     }
+                 }
+
+                else {
+                     Toast.makeText(getActivity(), "Enter Review and rating in Review and rating box", Toast.LENGTH_SHORT).show();
+                 }
 
             }
         });
+
 
 
         navigationButton.setOnClickListener(new View.OnClickListener() {

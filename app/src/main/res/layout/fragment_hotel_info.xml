@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.shubham_v.foodie.frahment.HotelInfo">
+    tools:context="com.example.shubham_v.foodie.Fragment.HotelInfo">
 
 
     <ImageView
@@ -240,7 +240,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="69dp"
                             android:id="@+id/navigation_button_id"
-                            android:background="@drawable/apple_google_maps" />
+                            android:background="#FFFFFF"
+
+
+                            android:text="NAVIGATION" />
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
